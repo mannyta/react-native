@@ -379,6 +379,12 @@ public class ReactWebViewManager extends SimpleViewManager<WebView> {
     webView.getSettings().setDisplayZoomControls(false);
     webView.getSettings().setDomStorageEnabled(true);
 
+    webView.getSettings().setAppCacheMaxSize(1024*1024*8);
+    webView.getSettings().setAllowFileAccess(true);
+    webView.getSettings().setAppCacheEnabled(true);
+    webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+    webView.getSettings().setAllowFileAccessFromFileURLs(true);
+
     // Fixes broken full-screen modals/galleries due to body height being 0.
     webView.setLayoutParams(
             new LayoutParams(LayoutParams.MATCH_PARENT,
